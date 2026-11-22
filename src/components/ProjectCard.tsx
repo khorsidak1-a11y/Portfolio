@@ -9,14 +9,17 @@ export function ProjectCard({ p }: { p: Project }) {
       className="group block"
     >
       <div className="relative aspect-[10/7] overflow-hidden border">
-        <img
+        {p.image ? <img
           src={p.image}
           alt={p.title}
           loading="lazy"
           width={1280}
           height={896}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        /> : <div className="flex h-full flex-col justify-end bg-card p-6 sm:p-8">
+            <span className="label-mono">CAD · Konstruktion · Prototype</span>
+            <span className="mt-3 text-2xl font-semibold sm:text-3xl">{p.title}</span>
+          </div>}
         <span className="absolute left-3 top-3 bg-background px-2 py-1 font-mono text-xs">{p.no}</span>
       </div>
       <div className="py-5">

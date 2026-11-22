@@ -64,9 +64,9 @@ function ProjectPage() {
         </dl>
       </div>
 
-      <a href={p.image} target="_blank" rel="noreferrer" aria-label={`Åbn billede — ${p.title}`} className="mt-10 block border bg-card">
+      {p.image && <a href={p.image} target="_blank" rel="noreferrer" aria-label={`Åbn billede — ${p.title}`} className="mt-10 block border bg-card">
         <img src={p.image} alt={p.title} width={1280} height={896} className="max-h-[42rem] w-full object-contain" />
-      </a>
+      </a>}
 
       {p.gallery && p.gallery.length > 0 && (
         <section className="mt-10" aria-label="Projektbilleder">

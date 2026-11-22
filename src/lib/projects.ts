@@ -1,4 +1,3 @@
-import robotDetail from "@/assets/robotarm-cad-detalje.png.asset.json";
 import kar from "@/assets/sop-forsog.jpg.asset.json";
 import karDetail from "@/assets/sop-kar.jpg.asset.json";
 import cfdLaminar from "@/assets/sop-cfd-laminar.jpg.asset.json";
@@ -32,7 +31,7 @@ export type Project = {
   year: string;
   category: string;
   summary: string;
-  image: string;
+  image?: string;
   drawing?: string;
   gallery?: ProjectImage[];
   drawings?: ProjectImage[];
@@ -50,31 +49,52 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "robotarm",
+    slug: "ballofix-ventil",
     no: "01",
-    title: "Robotarm med griber",
-    year: "2024",
-    category: "Konstruktion · Mekanisme",
-    summary: "CAD-konstruktion og invers kinematik til en fysisk bygget robotarm og griber.",
-    image: robotDetail.url,
-    problem:
-      "Hvordan når man steder, som er svære eller umulige at komme til? Vi byggede en fleksibel, blæksprutte-inspireret arm, der kan bevæge sig ind i snævre rum – et princip, der kan bruges i medicinsk udstyr (fx minimalt invasiv kirurgi) og i industrien til inspektion og håndtering.",
-    inspiration: { label: "Inspiration: blæksprutte-inspireret robotik (ScienceDirect)", url: "https://www.sciencedirect.com/science/article/pii/S2666998624006033" },
-    tools: ["Fusion 360", "Invers kinematik", "3D-print", "Servomotorer"],
-    role: "CAD-konstruktion og kinematik",
-    challenge:
-      "At designe en robotarm med griber, der kunne bygges med 3D-printede dele og styres præcist til en given position.",
+    title: "Projekt 2 · Ballofix kugleventil",
+    year: "2026",
+    category: "DTU · CAD og dokumentation",
+    summary: "Modellering af alle komponenter i SolidWorks, samlet assembly, samlingstegning og maskintegning af låseskruen.",
+    image: ballofixSnit.url,
+    problem: "Hvordan beskriver man en kugleventils opbygning og funktion i CAD og tekniske tegninger? I projekt 2 arbejdede jeg med en Ballofix-ventil og sammenhængen mellem enkeltkomponenter, samling og dokumentation.",
+    tools: ["SolidWorks", "Assembly", "Samlingstegning", "Maskintegning"],
+    role: "Individuelt projekt på DTU – modellering af alle komponenter og teknisk dokumentation",
+    challenge: "At få ventilhus, kugle, tætninger, greb og skruer til at passe sammen i en overskuelig assembly og formidle konstruktionen gennem tekniske tegninger.",
     process: [
-      "Modellerede led, beslag og griber som samling i Fusion 360.",
-      "Udledte invers kinematik, så armens vinkler kunne beregnes ud fra en ønsket position.",
-      "Printede, samlede og testede prototypen og justerede tolerancer undervejs.",
+      "Modellerede alle ventilens komponenter og samlede dem i SolidWorks.",
+      "Udarbejdede en samlingstegning, der viser komponenternes indbyrdes placering.",
+      "Lavede en maskintegning af låseskruen med fokus på tydelig målsætning.",
+      "Arbejdede med materialernes visuelle fremtræden og BALLOFIX-logoet på grebet.",
     ],
-    result: "Prototypen blev bygget, testet og præsenteret ved HTX åbent hus. Projektkarakter: 12.",
-    learned: "Hvordan tolerancer, materialevalg og monteringsrækkefølge påvirker en fysisk mekanisme.",
+    result: "En CAD-model af Ballofix-ventilen med alle komponenter, en samlingstegning og en separat maskintegning af låseskruen.",
+    learned: "At holde sammenhæng mellem partmodeller, assembly og tegninger – og gøre mål og detaljer tydelige for den, der skal læse dokumentationen.",
+    documents: [
+      { url: ballofixBrief.url, label: "Se opgavebeskrivelse", format: "PDF", note: "Den officielle projektopgave fra DTU." },
+    ],
+  },
+  {
+    slug: "sproejtepumpe",
+    no: "02",
+    title: "Projekt 3 · Sprøjtepumpe",
+    year: "2026",
+    category: "DTU · Konstruktion og prototype",
+    summary: "Mekanisk konstruktion i SolidWorks, 3D-printede dele og videreudvikling af en samlet sprøjtepumpe.",
+    problem: "Hvordan fastholder og bevæger man en sprøjtes stempel i en laboratoriepumpe? Projektet kobler CAD-konstruktion med en fysisk samling, hvor holder, pusher og drev skal fungere sammen.",
+    tools: ["SolidWorks", "3D-print", "Assembly", "Mates", "Prototyper"],
+    role: "Ansvarlig for CAD-konstruktionen af sprøjtepumpen i et gruppeprojekt på DTU",
+    challenge: "At integrere sprøjteholder, pusher, motorholder, føringsstænger og spindeldrev, så delene kan samles og stemplets bevægelse begrænses mekanisk i CAD-modellen.",
+    process: [
+      "Designede og samlede pumpens mekaniske dele i SolidWorks, herunder sprøjteholder, pusher og motorholder.",
+      "Integrerede sprøjte, stempel, føringsstænger og spindeldrev i assemblyen og klargjorde dele til 3D-print.",
+      "Arbejdede med mates og bevægelsesgrænser, så stemplets vandring passer til cylinderen.",
+      "Samlede prototypen og videreudviklede holderen ved pusheren med en vingemøtrik for at gøre fastspændingen lettere.",
+    ],
+    result: "En samlet prototype og en CAD-assembly med sprøjte og stempel. Projektet er under videreudvikling med fokus på nemmere montering og brug.",
+    learned: "At fysisk montering giver konkret feedback til CAD-arbejdet: adgang til fastgørelser, pasform og bevægelsesfrihed skal vurderes i den samlede konstruktion.",
   },
   {
     slug: "rc-fly",
-    no: "02",
+    no: "03",
     title: "RC-fly prototype",
     year: "2026",
     category: "Konstruktion · Beregning",
@@ -110,7 +130,7 @@ export const projects: Project[] = [
   },
   {
     slug: "koblede-kar",
-    no: "03",
+    no: "04",
     title: "Koblede kar – CFD og modellering",
     year: "2026",
     category: "Analyse · CFD",
@@ -137,7 +157,7 @@ export const projects: Project[] = [
   },
   {
     slug: "telefonloesning",
-    no: "04",
+    no: "05",
     title: "Telefonløsning med Python og GSM",
     year: "2025",
     category: "Software · Hardware",
@@ -163,7 +183,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fysik-tmd",
-    no: "05",
+    no: "06",
     title: "Dæmpning af svingninger med Tuned Mass Damper",
     year: "2026",
     category: "Fysik A · Eksamensprojekt",
@@ -189,31 +209,4 @@ export const projects: Project[] = [
       "At sammenligne en teoretisk model med målinger – og at vurdere fejlkilder og afvigelser ærligt.",
     report: { url: fysikReport.url, label: "Se eksamensprojekt" },
   },
-  {
-    slug: "ballofix-ventil",
-    no: "06",
-    title: "Ballofix kugleventil – CAD og teknisk dokumentation",
-    year: "2026",
-    category: "DTU 62143 · Igangværende",
-    summary: "Komplet CAD-modellering af en Ballofix kugleventil med samlingstegning og rendering i SolidWorks.",
-    image: ballofixSnit.url,
-    drawing: ballofixSnit.url,
-    problem:
-      "Hvordan dokumenterer man et industrielt produkt, så det kan fremstilles? Opgaven er at modellere alle komponenter i en Ballofix kugleventil – fra ventilhus og kugle til O-ringe og greb – og levere en komplet teknisk dokumentationspakke.",
-    tools: ["SolidWorks", "Samlingstegning", "Exploded view / BOM", "MMTH"],
-    role: "Individuelt projekt, DTU 62143 Mekanisk produktdokumentation og -analyse",
-    challenge:
-      "At modellere alle otte komponenter korrekt med kosmetiske gevind og materialeegenskaber og samle dem i en funktionsdygtig assembly, hvor ventilen kan åbnes og lukkes.",
-    process: [
-      "Modellerer alle parter: ventilhus, låseskrue, O-ringe, støtteringe, greb, skrue og ventilkugle.",
-      "Samler komponenterne i en assembly med undersamlinger, så ventilens bevægelse kan illustreres.",
-      "Laver fotorealistisk rendering, samlingstegning med snit og exploded view samt maskintegning af låseskruen.",
-    ],
-    result: "Projektet er igangværende og afleveres november 2026.",
-    learned: "God CAD-skik: kosmetiske gevind, undersamlinger og korrekt tegningspraksis efter MMTH.",
-    documents: [
-      { url: ballofixBrief.url, label: "Se opgavebeskrivelse", format: "PDF", note: "Den officielle opgave fra DTU – min besvarelse er under udarbejdelse." },
-    ],
-  },
 ];
-

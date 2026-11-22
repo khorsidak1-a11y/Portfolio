@@ -5,7 +5,7 @@ import { smallProjects } from "@/lib/experience";
 import { Typewriter, Reveal } from "@/components/motion";
 
 const title = "Projekter – Khorsid Abdul Kader";
-const desc = "Robotarm, RC-fly, CFD af koblede kar og en GSM-telefonløsning – ingeniørprojekter fra problem til prototype.";
+const desc = "Ballofix, sprøjtepumpe, RC-fly, CFD af koblede kar og en GSM-telefonløsning – ingeniørprojekter fra problem til prototype.";
 
 export const Route = createFileRoute("/projekter/")({
   head: () => ({
@@ -78,8 +78,11 @@ function Row({ p, flip }: { p: Project; flip: boolean }) {
         onMouseLeave={() => setHover(false)}
       >
         <div className={`relative aspect-[10/7] overflow-hidden border transition-shadow duration-500 group-hover:shadow-glow ${flip ? "md:order-2" : ""}`}>
-          <img src={p.image} alt={p.title} loading="lazy" width={1280} height={896}
-            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${hover && p.drawing ? "scale-110 opacity-0" : "scale-100 opacity-100"}`} />
+          {p.image ? <img src={p.image} alt={p.title} loading="lazy" width={1280} height={896}
+            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${hover && p.drawing ? "scale-110 opacity-0" : "scale-100 opacity-100"}`} /> : <div className="flex h-full flex-col justify-end bg-card p-6 sm:p-8">
+            <span className="label-mono">CAD · Konstruktion · Prototype</span>
+            <span className="mt-3 text-2xl font-semibold sm:text-3xl">{p.title}</span>
+          </div>}
           {p.drawing && (
             <img src={p.drawing} alt={`Teknisk tegning – ${p.title}`} loading="lazy" width={1280} height={896}
               className={`absolute inset-0 h-full w-full object-contain bg-card transition-all duration-700 ${hover ? "scale-100 opacity-100" : "scale-95 opacity-0"}`} />
