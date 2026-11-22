@@ -27,7 +27,7 @@ function ProjectsPage() {
       <p className="label-mono">{projects.length} projekter · Produktstudier</p>
       <h1 className="mt-2 text-4xl font-bold sm:text-6xl"><Typewriter text="Projekter" speed={70} /></h1>
       <p className="mt-4 max-w-xl text-muted-foreground">
-        Konstruktion, beregninger og forsøg fra HTX og mit studie på DTU. Her er både det, der lykkedes, og det, jeg måtte arbejde videre med.
+        Udvalgte projekter fra DTU og HTX med mit bidrag, arbejdsproces og resultater. Se eksempler på teknisk dokumentation, prototypeudvikling, beregninger og forsøg.
       </p>
 
       <div className="mt-16 space-y-24">
@@ -94,8 +94,11 @@ function Row({ p, flip }: { p: Project; flip: boolean }) {
           <span className="font-mono text-sm text-accent">Projekt {p.no}</span>
           <div className="mt-2 flex gap-3"><span className="label-mono">{p.category}</span><span className="label-mono">· {p.year}</span></div>
           <h3 className="mt-2 text-3xl font-semibold">{p.title}</h3>
-          <p className="label-mono mt-5 text-accent">Problem</p>
-          <p className="mt-1 line-clamp-4 text-muted-foreground">{p.problem}</p>
+          <p className="mt-3 text-muted-foreground">{p.summary}</p>
+          <dl className="mt-5 space-y-4 border-t pt-4 text-sm">
+            <div><dt className="label-mono">Mit bidrag</dt><dd className="mt-1 leading-relaxed">{p.role}</dd></div>
+            <div><dt className="label-mono">Status / resultat</dt><dd className="mt-1 leading-relaxed text-muted-foreground">{p.result}</dd></div>
+          </dl>
           <span className="mt-5 inline-block border-b border-accent pb-0.5 text-sm transition-all group-hover:pr-4">Se projektet →</span>
         </div>
       </Link>

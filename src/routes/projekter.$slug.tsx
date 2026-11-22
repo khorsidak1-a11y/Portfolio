@@ -55,7 +55,7 @@ function ProjectPage() {
           <p className="mt-4 text-lg text-muted-foreground">{p.summary}</p>
         </div>
         <dl className="self-end border bg-card font-mono text-sm">
-          {[["År", p.year], ["Rolle", p.role], ["Værktøjer", p.tools.join(", ")]].map(([k, v]) => (
+          {[["År", p.year], ["Mit bidrag", p.role], ["Værktøjer", p.tools.join(", ")]].map(([k, v]) => (
             <div key={k} className="border-b px-4 py-3 last:border-b-0">
               <dt className="text-xs text-muted-foreground">{k}</dt>
               <dd className="mt-1">{v}</dd>
@@ -63,6 +63,11 @@ function ProjectPage() {
           ))}
         </dl>
       </div>
+
+      <section className="mt-8 border-l-2 border-accent bg-card p-5 sm:p-6" aria-label="Status og resultat">
+        <h2 className="label-mono">Status / resultat</h2>
+        <p className="mt-2 max-w-3xl text-lg leading-relaxed">{p.result}</p>
+      </section>
 
       {p.image && <a href={p.image} target="_blank" rel="noreferrer" aria-label={`Åbn billede — ${p.title}`} className="mt-10 block border bg-card">
         <img src={p.image} alt={p.title} width={1280} height={896} className="max-h-[42rem] w-full object-contain" />
@@ -133,9 +138,8 @@ function ProjectPage() {
             </div>
           </Section>
         )}
-        <Section label="Resultat"><p>{p.result}</p></Section>
         {p.report && (
-          <Section label="SOP-rapport">
+          <Section label="Rapport">
             {p.report.url ? (
               <Button asChild variant="outline"><a href={p.report.url} target="_blank" rel="noreferrer"><FileText />{p.report.label}</a></Button>
             ) : (
@@ -148,6 +152,12 @@ function ProjectPage() {
         )}
         <Section label="Det lærte jeg"><p>{p.learned}</p></Section>
       </div>
+
+      <section className="mt-16 border bg-card p-6">
+        <h2 className="text-2xl font-semibold">Har I en lignende opgave?</h2>
+        <p className="mt-2 text-muted-foreground">Jeg søger et studiejob, hvor jeg kan bidrage og udvikle mine kompetencer i praksis.</p>
+        <Button asChild variant="outline" className="mt-5"><Link to="/kontakt">Kontakt mig →</Link></Button>
+      </section>
 
       <Link
         to="/projekter/$slug"

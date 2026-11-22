@@ -42,8 +42,14 @@ function About() {
       <p className="label-mono">Om mig</p>
       <h1 className="mt-2 text-4xl font-bold sm:text-5xl"><Typewriter text="Struktureret, praktisk og nysgerrig." highlight="nysgerrig." /></h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-        Jeg kan lide at forstå, hvordan ting virker – og så bygge dem bedre. Fra PostNord har jeg lært at planlægge
-        mine egne opgaver og levere under tidspres. I fritiden går jeg op i styrketræning og teknik.
+        Jeg læser til diplomingeniør i maskinteknik på DTU Ballerup og søger et studiejob,
+        hvor jeg kan bruge min erfaring med konstruktion, teknisk dokumentation, prototyper og analyse.
+        Jeg arbejder gerne med både modellen på skærmen og delene på arbejdsbordet.
+      </p>
+      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+        I sprøjtepumpeprojektet har jeg hovedansvaret for CAD-konstruktionen og arbejder også med
+        montage og forbedringer af prototypen. Fra PostNord og Netto tager jeg erfaring med at
+        prioritere opgaver, møde kunder og bevare overblikket i en travl hverdag.
       </p>
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1.4fr_1fr]">

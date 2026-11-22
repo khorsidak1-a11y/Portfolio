@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Typewriter, Reveal } from "@/components/motion";
+import { Reveal } from "@/components/motion";
 
 const title = "Kontakt – Khorsid Abdul Kader";
 const desc = "Kontakt Khorsid Abdul Kader om studiejob inden for CAD, konstruktion eller produktion.";
@@ -30,11 +30,16 @@ function Contact() {
       <div className="mx-auto max-w-6xl px-5 py-20">
         <p className="label-mono">Kontakt</p>
         <h1 className="mt-2 max-w-3xl text-4xl font-bold sm:text-6xl">
-          <Typewriter text="Har I et studiejob inden for CAD, konstruktion eller produktion?" highlight="CAD, konstruktion eller produktion?" />
+          Lad os tale om jeres næste opgave.
         </h1>
-        <Reveal delay={300}>
+        <Reveal delay={150}>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Tilgængelig 8–20 timer om ugen i København og omegn – alle hverdage og i weekenden.
+            Jeg søger et studiejob inden for maskinteknik med opgaver i konstruktion, teknisk dokumentation,
+            prototypearbejde eller analyse. Tilgængelig 8–20 timer om ugen i København og omegn –
+            alle hverdage og i weekenden.
+          </p>
+          <p className="mt-4 max-w-xl text-muted-foreground">
+            Skriv gerne, hvilke opgaver I har brug for hjælp til, og hvordan arbejdstiden kan tilrettelægges.
           </p>
         </Reveal>
         <ul className="mt-12 max-w-2xl border bg-card">
