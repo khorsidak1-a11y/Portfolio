@@ -124,7 +124,7 @@ function Index() {
         </h2>
         <Reveal delay={300}>
           <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
-            Jeg kan arbejde hele onsdagen, fredag eftermiddag og i weekenderne.
+            Jeg er tilgængelig alle hverdage og i weekenden.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a

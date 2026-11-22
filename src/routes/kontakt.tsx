@@ -34,8 +34,7 @@ function Contact() {
         </h1>
         <Reveal delay={300}>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Tilgængelig 8–20 timer om ugen i København og omegn – hele onsdagen, fredag eftermiddag
-            og i weekenderne.
+            Tilgængelig 8–20 timer om ugen i København og omegn – alle hverdage og i weekenden.
           </p>
         </Reveal>
         <ul className="mt-12 max-w-2xl border bg-card">
