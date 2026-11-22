@@ -17,7 +17,8 @@ import sopReport from "@/assets/sop-rapport.pdf.asset.json";
 import gsmDocumentation from "@/assets/gsm-dokumentation.docx.asset.json";
 import gsmSynopsis from "@/assets/gsm-synopsis.docx.asset.json";
 import fysikReport from "@/assets/fysik-eksamensprojekt-tmd.pdf.asset.json";
-import ballofixBrief from "@/assets/ballofix-opgavebeskrivelse.pdf.asset.json";
+import ballofixSubmission from "@/assets/ballofix-aflevering.pdf.asset.json";
+import pumpCad from "@/assets/sproejtepumpe-cad.png.asset.json";
 import ballofixSnit from "@/assets/ballofix-snit.png.asset.json";
 import tmdForsoeg from "@/assets/tmd-forsoeg.jpg.asset.json";
 import tmdGraf from "@/assets/tmd-graf.png.asset.json";
@@ -69,7 +70,7 @@ export const projects: Project[] = [
     result: "En CAD-model af Ballofix-ventilen med alle komponenter, en samlingstegning og en separat maskintegning af låseskruen.",
     learned: "At holde sammenhæng mellem partmodeller, assembly og tegninger – og gøre mål og detaljer tydelige for den, der skal læse dokumentationen.",
     documents: [
-      { url: ballofixBrief.url, label: "Se opgavebeskrivelse", format: "PDF", note: "Den officielle projektopgave fra DTU." },
+      { url: ballofixSubmission.url, label: "Se min Ballofix-aflevering", format: "PDF", note: "Min aflevering med renderinger, exploded view, snit, samlingstegning og arbejdstegning af låseskruen." },
     ],
   },
   {
@@ -78,6 +79,7 @@ export const projects: Project[] = [
     title: "Projekt 3 · Sprøjtepumpe",
     year: "2026",
     category: "DTU · Igangværende projekt",
+    image: pumpCad.url,
     summary: "Igangværende gruppeprojekt: udvikling af en laboratoriepumpe fra mekanisk konstruktion og komponentintegration til 3D-print, montage og løbende forbedringer.",
     problem: "Hvordan udvikler man en sprøjtepumpe, som både kan fremstilles, samles og bruges i praksis? Projektet handler om at få sprøjte, drev, føring og fastgørelse til at fungere som ét system – og gøre løsningen lettere at montere og betjene.",
     tools: ["SolidWorks", "Mekanisk konstruktion", "3D-print", "Komponentintegration", "Montage", "Prototypeudvikling"],
